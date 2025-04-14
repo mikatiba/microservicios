@@ -1,0 +1,25 @@
+{
+    "usuarios": [
+      {
+        "id": 1,
+        "nombre": "Mikael",
+        "correo": "mikael@email.com"
+      }
+    ],
+    "productos": [
+      {
+        "id": 101,
+        "nombre": "Laptop",
+        "precio": 999.99,
+        "stock": 5,
+        "descripcion": "Laptop para desarrollo de software"
+      },
+      {
+        "id": 102,
+        "nombre": "Monitor",
+        "precio": 199.99,
+        "stock": 12,
+        "descripcion": "Monitor LED de 24 pulgadas"
+      }
+    ]
+  }
