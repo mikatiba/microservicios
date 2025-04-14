@@ -1,0 +1,22 @@
+### GET /info
+GET http://127.0.0.1:5000/info
+
+### POST /crear_usuario
+POST http://127.0.0.1:5000/crear_usuario
+Content-Type: application/json
+
+{
+  "nombre": "Mikael",
+  "correo": "mikaeltiba04@email.com"
+}
+
+### POST /crear_usuario (con error)
+POST http://127.0.0.1:5000/crear_usuario
+Content-Type: application/json
+
+{
+  "nombre": "Incompleto"
+}
+
+### GET /usuarios
+GET http://127.0.0.1:5000/usuarios
