@@ -18,7 +18,7 @@ def load_user(user_id):
 
 @app.route('/')
 def index():
-    return redirect(url_for('login')) #te lleva al login
+    return redirect(url_for('login'))
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -26,22 +26,25 @@ def login():
         username = request.form['username']
         password = request.form['password']
         
-        #si el usuario existe te envía al dashboard
         user_data = users.get(username)
-        if user_data and user_data['password'] == password:
+
+        if not user_data:
+            flash("El usuario no existe.")
+        elif user_data['password'] != password:
+            flash("Contraseña incorrecta.")
+        else:
             user = User(username, user_data['role'])
             login_user(user)
             return redirect(url_for('dashboard'))
-        else:
-            flash("Credenciales inválidas") #si el usuario no existe imprime este mensaje
+
     return render_template('login.html')
 
-@app.route('/dashboard') #te envía al dashboard
+@app.route('/dashboard')
 @login_required
 def dashboard():
     return render_template('dashboard.html', user=current_user)
 
-@app.route('/logout') #una vez le des click a "logout" te envía a la página de login
+@app.route('/logout')
 @login_required
 def logout():
     logout_user()
