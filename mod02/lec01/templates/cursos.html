@@ -1,0 +1,14 @@
+{% extends 'base.html' %} <!--Se aplica  la herencia de la plantilla base-->
+
+            <!--Título-->
+{% block title %}Cursos{% endblock %} 
+
+<!--Listado de cursos-->
+{% block content %}
+    <h2>Lista de Cursos</h2>
+    <ul>
+        {% for curso in cursos %} 
+            <li>{{ curso }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Mi App{% endblock %}</title>
+</head>
+<body>
+    <h1>Mi Aplicación de Cursos</h1>
+    <nav>
+        <a href="{{ url_for('index') }}">Inicio</a> | <!--Botón que te lleva al inicio-->
+        <a href="{{ url_for('mostrar_cursos') }}">Cursos</a> | <!--Botón que te lleva a la lista de los cursos-->
+        <a href="{{ url_for('mostrar_estudiantes') }}">Estudiantes</a> <!--Botón que muestra el listado de estudiantes-->
+    </nav>
+    <hr>
+    {% block content %}{% endblock %}
+</body>
+</html>
