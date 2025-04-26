@@ -1,0 +1,25 @@
+### LOGIN como admin
+POST http://127.0.0.1:5000/login
+Content-Type: application/x-www-form-urlencoded
+
+username=admin&password=admin
+
+
+### ACCEDER a /admin
+GET http://127.0.0.1:5000/admin
+
+
+### ACCEDER a /user
+GET http://127.0.0.1:5000/user
+
+
+### ACCEDER a /guest
+GET http://127.0.0.1:5000/guest
+
+
+### LOGOUT
+GET http://127.0.0.1:5000/logout
+
+
+### PROBAR acceder a /admin DESPUÉS de logout
+GET http://127.0.0.1:5000/admin
